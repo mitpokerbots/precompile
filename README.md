@@ -2,6 +2,7 @@
 Supports precompiling binaries for usage on the scrimmage server.
 
 Usage guide:
+
 0. Make sure that you have `docker` installed on your machine for command line usage https://docs.docker.com/install/
 
 Docker on Windows Subsystem for Linux (WSL) requires a special installation (Google is your friend).
