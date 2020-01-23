@@ -1,9 +1,9 @@
 prebuild:
-	sudo docker build -t scrimmage .
-	sudo docker run -it --name scrimmage scrimmage
-	sudo docker cp scrimmage:/home/worker/scrimmage ./built
+	docker build -t scrimmage .
+	docker run --name=scrimmage -it scrimmage
+	docker cp scrimmage:/home/worker/scrimmage ./built
 
 clean:
-	sudo docker container rm scrimmage
-	sudo rm -rf ./built
+	docker rm scrimmage
+	rm -rf ./built
 
