@@ -36,3 +36,26 @@ Usage guide:
    ```"build": [],```
 
 5. Zip your pokerbot and upload it to the scrimmage server.
+
+Note:
+There is a bug within python's unzip utility:
+https://github.com/python/cpython/pull/17790
+
+As a workaround, you should have your build command be a python program which sets the correct file permissions for your compiled program.
+
+`commands.json`:
+
+```
+{
+    "build": ["python3.7", "permissions.py"],
+    "run": ["./cppbot"]
+}
+```
+
+`permissions.py`:
+
+```
+import os
+
+os.system("chmod +x ./cppbot")
+```
